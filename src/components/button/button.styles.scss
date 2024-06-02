@@ -1,11 +1,25 @@
 @import 'src/app/globals.scss';
 
 .button {
-    background-color: var(--color-blue-500-op60);
-    border: 1px solid var(--color-blue-700);
     border-radius: toRem(4);
-    color: var(--color-gray-300);
     box-sizing: border-box;
     padding: toRem(6) toRem(15);
+    font-size: toRem(12);
     cursor: pointer;
+
+    &.primary {
+        color: var(--color-gray-300);
+        background-color: var(--color-blue-500-op60);
+        border: 1px solid var(--color-blue-700);
+        transition: .2s transform;
+        &:active {
+            transform: scale(.92);
+        }
+    }
+
+    &.ghost {
+        background-color: transparent;
+        border: 1px solid var(--color-gray-400);
+        color: var(--color-gray-400);
+    }
 }

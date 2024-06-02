@@ -11,7 +11,7 @@ describe('Button', () => {
     });
 
     it('should print the text', () => {
-        render(<Button>{text}</Button>)
+        render(<Button onClick={fn}>{text}</Button>)
         expect(screen.findByText(text)).toBeDefined()
     })
 
