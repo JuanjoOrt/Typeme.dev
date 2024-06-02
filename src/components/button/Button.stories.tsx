@@ -9,6 +9,6 @@ export default {
     },
   } as Meta<typeof Button>
   
-export const Alert: StoryObj<typeof Button> = {
+export const Default: StoryObj<typeof Button> = {
     render: () => <Button>Test button</Button>
 }
