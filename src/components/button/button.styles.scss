@@ -1,0 +1,11 @@
+@import 'src/app/globals.scss';
+
+.button {
+    background-color: var(--color-blue-500-op60);
+    border: 1px solid var(--color-blue-700);
+    border-radius: toRem(4);
+    color: var(--color-gray-300);
+    box-sizing: border-box;
+    padding: toRem(6) toRem(15);
+    cursor: pointer;
+}

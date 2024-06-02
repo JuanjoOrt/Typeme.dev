@@ -1,0 +1,29 @@
+:root {
+  --color-background: #24252D;
+  --color-blue-500: #4B96FF;
+  --color-blue-500-op60: #4b96ff3C;
+  --color-blue-700: #2678EB;
+  --color-card: #2E3037;
+  --color-gray-100: #F7F7F7;
+  --color-gray-200: #E6E9EE;
+  --color-gray-300: #DDE0E4;
+  --color-gray-400: #818890;
+  --color-gray-500: #535661;
+  --color-gray-600: #4B4C53;
+  --color-gray-700: #3A3D4A;
+  --color-gray-800: #2E3039;
+  --color-gray-900: #1F2028;
+  --color-green-100: #E7F9ED;
+  --color-green-500: #30C85E;
+  --color-green-600: #68D94A;
+  --color-orange-500: #EB7926;
+  --color-red-500: #E46666;
+  --color-slate-500: #A9ADC1;
+  --color-yellow-100: #F4EED6;
+  --color-yellow-500: #FFD644
+}
+
+@function toRem($value) {
+  $remValue: ($value / 16) + rem; 
+  @return $remValue;
+}

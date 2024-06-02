@@ -1,10 +1,11 @@
 import React from "react"
-
+import './button.styles.scss'
 
 interface Button {
-    children: React.ReactNode | string
+    children: React.ReactNode | string,
+    onClick?: () => void
 }
 
-export default function Button ({ children }: Button) {
-    return <button>{children}</button>
+export default function Button ({ children, onClick = () => {} }: Button) {
+    return <button className='button' onClick={onClick}>{children}</button>
 }
