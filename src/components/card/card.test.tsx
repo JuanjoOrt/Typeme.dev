@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-import { render, screen, fireEvent, cleanup } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { Card } from ".";
 
 describe('Card', () => {

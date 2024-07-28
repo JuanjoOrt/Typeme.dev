@@ -19,7 +19,9 @@ export function Input ({ placeholder, isActive, isWrong, isCorrect, value = '', 
     const className = `input ${isWrongClass} ${isCorrectClass}`
     
     return (
-        <div className={className}>
+        <div 
+            data-testid='component-input' 
+            className={className}>
             <input 
                 type="text" 
                 value={value}

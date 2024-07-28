@@ -1,14 +1,10 @@
 import '@testing-library/jest-dom'
-import { render, screen, fireEvent, cleanup } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import { Button } from ".";
 
 describe('Button', () => {
     const text = 'text'
     const fn = jest.fn()
-
-    afterEach(() => {
-        cleanup();
-    });
 
     test('should print the text', () => {
         render(<Button onClick={fn}>{text}</Button>)
