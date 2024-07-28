@@ -27,7 +27,7 @@ export function Input ({ placeholder, isActive, isWrong, isCorrect, value = '', 
                 maxLength={1}
                 style={{ width }} 
                 placeholder={placeholder}
-                disabled={isWrong || isCorrect}
+                disabled={!isActive}
             />
             {isActive && <div className='active' style={{ width }}/>}
         </div>

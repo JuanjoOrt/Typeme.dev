@@ -24,17 +24,9 @@ export const Default: StoryObj<typeof Input> = {
     const [value, setValue] = useState('')
     return (
     <div style={{zoom: 4}}>
-      <Input placeholder={'A'} onChange={(val) => setValue(val)} value={value} />
+      <Input placeholder={'A'} onChange={(val) => setValue(val)} value={value} isActive />
     </div>
     )}
-}
-
-export const Active: StoryObj<typeof Input> = {
-  render: () => (
-    <div style={{zoom: 4}}>
-      <Input placeholder='A' isActive onChange={EMPTY_ONCHANGE} />
-    </div>
-    )
 }
 
 export const Correct: StoryObj<typeof Input> = {
