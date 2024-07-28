@@ -27,3 +27,7 @@
   $remValue: ($value / 16) + rem; 
   @return $remValue;
 }
+
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}

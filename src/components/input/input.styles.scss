@@ -1,0 +1,51 @@
+@import 'src/app/globals.scss';
+
+.input{
+    background-color: rgb(from var(--color-gray-200) r g b / 10%);
+    width: fit-content;
+    height: toRem(40);
+    padding: 0 toRem(0.7);
+    position: relative;
+    border-radius: 1px 1px 0 0;
+
+    & input {
+        color: var(--color-gray-100);
+        font-size: toRem(30);
+        margin-top: .2rem;
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+        text-align: center;
+        caret-color: transparent;
+        
+        &:focus {
+            outline-width: 0;
+        }
+    }
+
+    .active {
+        height: toRem(2.3);
+        background-color: rgb(from var(--color-blue-500) r g b / 78%);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 0 toRem(0.7);
+        animation-name: activeAnimation;
+        animation-duration: .7s;
+        animation-iteration-count: infinite;
+    }
+
+    .correct {
+        background-color: rgb(from var(--color-green-600) r g b / 70%);
+    }
+
+    .wrong {
+        background-color: rgb(from var(--color-red-500) r g b / 70%);
+    }
+}
+
+@keyframes activeAnimation {
+    0% { opacity: 0%; }
+    50% { opacity: 100%; }
+    100% { opacity: 0%; }
+}
