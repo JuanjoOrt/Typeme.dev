@@ -1,21 +1,21 @@
-import { describe, it, expect, vi, afterEach } from "vitest";
+import '@testing-library/jest-dom'
 import { render, screen, fireEvent, cleanup } from '@testing-library/react'
 import { Button } from ".";
 
 describe('Button', () => {
     const text = 'text'
-    const fn = vi.fn()
+    const fn = jest.fn()
 
     afterEach(() => {
         cleanup();
     });
 
-    it('should print the text', () => {
+    test('should print the text', () => {
         render(<Button onClick={fn}>{text}</Button>)
         expect(screen.findByText(text)).toBeDefined()
     })
 
-    it('should onClick works', async () => {
+    test('should onClick works', async () => {
         render(<Button onClick={fn}>{text}</Button>)
         const button = await screen.findByText(text) 
         fireEvent.click(button);
