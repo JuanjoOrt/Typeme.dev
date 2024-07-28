@@ -1,17 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Input } from './Input';
+import { useState } from 'react';
+
+const EMPTY_ONCHANGE = () => {}
 
 export default {
     title: 'Components/Input',
     component: Input,
-    argTypes: {
-      placeholder: {
-        control: { type: 'text', maxLength: 1 },
-      },
-      active: {
-        control: { type: 'boolean', disable: true},
-      },
-    },
     parameters: {
       layout: 'centered',
       backgrounds: {
@@ -24,21 +19,36 @@ export default {
   } as Meta<typeof Input>
   
 export const Default: StoryObj<typeof Input> = {
-  render: ({ placeholder }) => {
-  const plc = placeholder || 'A'
-  return (
-  <div style={{zoom: 4}}>
-    <Input placeholder={plc} active={false} />
-  </div>
-  )}
+  
+  render: () => {
+    const [value, setValue] = useState('')
+    return (
+    <div style={{zoom: 4}}>
+      <Input placeholder={'A'} onChange={(val) => setValue(val)} value={value} />
+    </div>
+    )}
 }
 
 export const Active: StoryObj<typeof Input> = {
-  render: ({ placeholder }) => {
-  const plc = placeholder || 'A'
-  return (
-  <div style={{zoom: 4}}>
-    <Input placeholder={plc} active/>
-  </div>
-  )}
+  render: () => (
+    <div style={{zoom: 4}}>
+      <Input placeholder='A' isActive onChange={EMPTY_ONCHANGE} />
+    </div>
+    )
+}
+
+export const Correct: StoryObj<typeof Input> = {
+  render: () => (
+    <div style={{zoom: 4}}>
+      <Input placeholder='A' value='A' isCorrect onChange={EMPTY_ONCHANGE} />
+    </div>
+    )
+}
+
+export const Wrong: StoryObj<typeof Input> = {
+  render: () => (
+    <div style={{zoom: 4}}>
+      <Input placeholder='A' value='A' isWrong onChange={EMPTY_ONCHANGE} />
+    </div>
+    )
 }

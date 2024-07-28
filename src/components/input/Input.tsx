@@ -5,23 +5,31 @@ import { getTheLength } from './utils'
 
 interface InputProps {
     placeholder: string,
-    active?: boolean
+    isActive?: boolean,
+    isWrong?: boolean,
+    isCorrect?: boolean,
+    value?: string,
+    onChange: (value: string) => void,
 }
 
-
-
-export function Input ({ placeholder, active }: InputProps) {
+export function Input ({ placeholder, isActive, isWrong, isCorrect, value = '', onChange }: InputProps) {
     const width = getTheLength(placeholder)
+    const isWrongClass = isWrong ? 'wrong' : ''
+    const isCorrectClass = isCorrect ? 'correct' : ''
+    const className = `input ${isWrongClass} ${isCorrectClass}`
     
     return (
-        <div className='input'>
+        <div className={className}>
             <input 
                 type="text" 
+                value={value}
+                onChange={(e) => onChange(e.target.value)}
                 maxLength={1}
                 style={{ width }} 
-                placeholder={placeholder} 
+                placeholder={placeholder}
+                disabled={isWrong || isCorrect}
             />
-            {active && <div className='active' style={{ width }}/>}
+            {isActive && <div className='active' style={{ width }}/>}
         </div>
     )
 }

@@ -35,12 +35,12 @@
         animation-iteration-count: infinite;
     }
 
-    .correct {
-        background-color: rgb(from var(--color-green-600) r g b / 70%);
+    &.correct {
+        background-color: rgb(from var(--color-green-600) r g b / 30%);
     }
 
-    .wrong {
-        background-color: rgb(from var(--color-red-500) r g b / 70%);
+    &.wrong {
+        background-color: rgb(from var(--color-red-500) r g b / 30%);
     }
 }
 
