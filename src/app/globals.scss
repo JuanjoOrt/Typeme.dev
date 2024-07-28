@@ -21,6 +21,16 @@
   --color-slate-500: #A9ADC1;
   --color-yellow-100: #F4EED6;
   --color-yellow-500: #FFD644
+
+  --spacing-512: toRem(512);
+  --spacing-256: toRem(256);
+  --spacing-128: toRem(128);
+  --spacing-64: toRem(64);
+  --spacing-32: toRem(32);
+  --spacing-16: toRem(16);
+  --spacing-8: toRem(8);
+  --spacing-4: toRem(4);
+  --spacing-2: toRem(2);
 }
 
 @function toRem($value) {
